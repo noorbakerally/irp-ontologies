@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:terms="http://vocab.org/transit/terms/"
+    xmlns="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:devices="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/"
+    xmlns:transport="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:temporal="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#"
+  xml:base="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport.owl"/>
+    <owl:imports rdf:resource="http://www.w3.org/2004/03/trix/rdfg-1/"/>
+    <owl:imports rdf:resource="http://vocab.org/transit/terms/"/>
+    <owl:imports rdf:resource="http://rdfs.org/sioc/ns"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+    <owl:imports rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices.owl"/>
+    <owl:imports rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Journey">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Journey</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <rdf:Description rdf:about="http://rdfs.org/sioc/ns#UserAccount">
+            <rdfs:subClassOf>
+              <owl:Restriction>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                >1</owl:cardinality>
+                <owl:onProperty>
+                  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/password"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+          </rdf:Description>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/user"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/BusAlert">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/line"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/Service"/>
+              <rdf:Description rdf:about="http://vocab.org/transit/terms/Route"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/line"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bus alert</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Alert"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/BusJourney">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/direction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/line"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://vocab.org/transit/terms/Route"/>
+              <rdf:Description rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/Service"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/line"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bus journey</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Journey"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Feedback">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Journey"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/onJourney"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://rdfs.org/sioc/ns#content"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://rdfs.org/sioc/ns#has_creator"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Feedback</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/Alert">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/bankHolidays"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/thursday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/wednesday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alert</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/tuesday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/sunday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/finishes"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/saturday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/direction"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/friday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://rdfs.org/sioc/ns#modified_at"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://vocab.org/transit/terms/monday"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/user">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >user</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/onJourney">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >on journey</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/withDevice">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >with device</rdfs:label>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/authToken">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >auth token</rdfs:label>
+  </rdf:Property>
+  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/password">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >password</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/finishes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >finishes</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/user/starts">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >starts</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/MobilePhone">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/Device"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mobile phone</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/iPhone">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >i phone</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/MobilePhone"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/OperatingSystem">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/Software"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Operating system</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/AndroidPhone">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Android phone</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/MobilePhone"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/MobileOperator">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mobile operator</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/Software">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Software</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/Device">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Device</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/os">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >os</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/uniqueDeviceId">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >unique device id</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/osversion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >osversion</rdfs:label>
+  </owl:DatatypeProperty>
+  <OperatingSystem rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/android">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >android</rdfs:label>
+  </OperatingSystem>
+  <MobileOperator rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/o2">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >o2</rdfs:label>
+  </MobileOperator>
+  <OperatingSystem rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/iOS">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >i OS</rdfs:label>
+  </OperatingSystem>
+  <MobileOperator rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/devices/orange">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >orange</rdfs:label>
+  </MobileOperator>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

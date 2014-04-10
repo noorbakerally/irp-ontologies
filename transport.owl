@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:transit="http://vocab.org/transit/terms/"
+    xmlns:naptan="http://transport.data.gov.uk/def/naptan/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:inf="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure.owl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+    <owl:imports rdf:resource="http://vocab.org/transit/terms/"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RoutePoint">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Route point</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure/sequenceNumber"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure/hasPoint"/>
+        <owl:allValuesFrom rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure/GeoPoint"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure/hasPoint"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/BusRouteMap">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bus route map</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RouteMap"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/BusRoutePoint">
+    <rdfs:subClassOf rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RoutePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Route point</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RouteMap">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/hasPoints"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Route map</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RoutePoint"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/hasPoints"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/Service">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty rdf:resource="http://transport.data.gov.uk/def/naptan/administrativeArea"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Service</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/VirtualStopTime">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Virtual stop time</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/service">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >service</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/hasPoints">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object property 1</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/routeMap">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >route map</rdfs:label>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/line">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >line</rdfs:label>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://vocab.org/transit/terms/Route">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/routeMap"/>
+        <owl:allValuesFrom rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/RouteMap"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty rdf:resource="http://transport.data.gov.uk/def/naptan/administrativeArea"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.org/transit/terms/Trip">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/service"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/Service"/>
+        <owl:onProperty rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/service"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

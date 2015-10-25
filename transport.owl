@@ -10,7 +10,7 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://www.dotrural.ac.uk/irp/uploads/ontologies/transport/">
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="http://www.dotrural.ac.uk/irp/uploads/ontologies/infrastructure.owl"/>
+    <owl:imports rdf:resource="https://raw.githubusercontent.com/noorbakerally/irp-ontologies/master/infrastructure.owl"/>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Created with TopBraid Composer</owl:versionInfo>
     <owl:imports rdf:resource="http://vocab.org/transit/terms/"/>
